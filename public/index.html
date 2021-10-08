@@ -16,8 +16,9 @@
     <link rel="icon" href="%PUBLIC_URL%/favicon.png" />
     <link rel="manifest" href="./manifest.json" />
     <!-- ios support-->
-    <link rel="apple-touch-icon" sizes="./logos/icon-192x192.png" />
+    <link rel="apple-touch-icon" href="./logos/icon-192x192.png" />
     <meta name="apple-mobile-web-app-status-bar" content="#333333" />
+    <meta name="theme-color" content="#333333" />
     <!---->
     <title>To Do PWA</title>
   </head>
@@ -32,4 +33,12 @@
   <body>
     <div id="root"></div>
   </body>
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker
+        .register("/sw.js", { scope: "." })
+        .then((reg) => console.log("sw registered"))
+        .catch(() => console.log("sw error"));
+    }
+  </script>
 </html>

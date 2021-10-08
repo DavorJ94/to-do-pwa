@@ -78,13 +78,13 @@ function App() {
       <InputItem itemAddition={handleItemAddition} />
       <SortPriorityButton
         show={showSortButton}
-        itemsLength={items.length || 0}
+        itemsLength={items?.length || 0}
         onClick={handleSortByPriority}
       >
         Sort by priority
       </SortPriorityButton>
       <ToDoItemsContainer>
-        {toDoItems.length > 0 ? (
+        {toDoItems?.length > 0 ? (
           toDoItems
         ) : (
           <NoToDoItemsMessage>No to do items.</NoToDoItemsMessage>
